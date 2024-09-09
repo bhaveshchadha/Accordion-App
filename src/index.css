@@ -1,0 +1,9 @@
+.box {
+  padding: 7px;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(100, 57, 1);
+  margin: 5px;
+  width: 50%;
+  margin: 5px auto;
+}
