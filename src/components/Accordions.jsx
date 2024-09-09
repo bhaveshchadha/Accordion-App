@@ -3,23 +3,23 @@ import { FaPlus } from "react-icons/fa6";
 function Accordions() {
   return (
     <div className="container">
-      <div className="box question">Enable Multi Sections</div>
-      <div className="box">
+      <div className="box  question">Enable Multi Sections</div>
+      <div className="box answer">
         Lorem ipsum dolor sit amet.
-        <FaPlus />
+        <FaPlus size={10} />
       </div>
-      <div className="box">
+      <div className="box answer">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
         possimus provident. Quidem!
-        <FaPlus />
+        <FaPlus size={10} />
       </div>
-      <div className="box">
+      <div className="box answer">
         Lorem ipsum dolor sit amet consectetur.
-        <FaPlus />
+        <FaPlus size={10} />
       </div>
-      <div className="box">
+      <div className="box answer">
         Lorem ipsum dolor sit amet consectetur.
-        <FaPlus />
+        <FaPlus size={10} />
       </div>
     </div>
   );
