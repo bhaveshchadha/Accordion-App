@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Ensures vertical alignment */
+  justify-content: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height */
+}
 .box {
   padding: 7px;
   color: white;
