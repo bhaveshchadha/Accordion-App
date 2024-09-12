@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
+import data from "../data/data";
+
 function Accordions() {
   const [multiSelections, setMultiSelections] = useState(false);
   const handleMultiSections = () => {
@@ -33,55 +35,21 @@ function Accordions() {
       <div className="box title" onClick={handleMultiSections}>
         Enable Multi Sections
       </div>
-      <div className="box show_answer" onClick={handleClick}>
-        <div className=" question">
-          Lorem ipsum dolor sit amet.
-          <FaPlus size={10} />
-        </div>
-        <div className=" answer close">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas et
-          distinctio accusamus modi ipsam quidem tenetur fugit a, aspernatur,
-          maxime, facilis expedita. Incidunt iure ipsa voluptatem officia quod
-          eveniet eligendi.
-        </div>
-      </div>
-      <div className="box show_answer" onClick={handleClick}>
-        <div className="question">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
-          possimus provident. Quidem!
-          <FaPlus size={10} />
-        </div>
-        <div className=" answer close">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas et
-          distinctio accusamus modi ipsam quidem tenetur fugit a, aspernatur,
-          maxime, facilis expedita. Incidunt iure ipsa voluptatem officia quod
-          eveniet eligendi.
-        </div>
-      </div>
-      <div className="box show_answer" onClick={handleClick}>
-        <div className="question">
-          Lorem ipsum dolor sit amet consectetur.
-          <FaPlus size={10} />
-        </div>
-        <div className=" answer close">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas et
-          distinctio accusamus modi ipsam quidem tenetur fugit a, aspernatur,
-          maxime, facilis expedita. Incidunt iure ipsa voluptatem officia quod
-          eveniet eligendi.
-        </div>
-      </div>
-      <div className="box show_answer" onClick={handleClick}>
-        <div className="question">
-          Lorem ipsum dolor sit amet consectetur.
-          <FaPlus size={10} />
-        </div>
-        <div className=" answer close">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas et
-          distinctio accusamus modi ipsam quidem tenetur fugit a, aspernatur,
-          maxime, facilis expedita. Incidunt iure ipsa voluptatem officia quod
-          eveniet eligendi.
-        </div>
-      </div>
+      {console.log(data.length)}
+
+      {data.length > 0 ? (
+        data.map((d) => (
+          <div className="box show_answer" onClick={handleClick} key={d.id}>
+            <div className=" question">
+              {d.question}
+              <FaPlus size={10} />
+            </div>
+            <div className=" answer close">{d.answer}</div>
+          </div>
+        ))
+      ) : (
+        <div>No data</div>
+      )}
     </div>
   );
 }
