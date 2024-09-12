@@ -21,11 +21,15 @@ function Accordions() {
           ? "Disable Multiple Sections"
           : "Enable Multi Sections"}
       </div>
-      {console.log(data.length)}
 
       {data?.length > 0 ? (
         data.map((d) => (
-          <AccordionItem key={d.id} d={d} multiSelections={multiSelections} />
+          <AccordionItem
+            key={d.id}
+            id={d.id}
+            d={d}
+            multiSelections={multiSelections}
+          />
 
           // <div className="box show_answer" onClick={handleClick} key={d.id}>
           //   <div className=" question">

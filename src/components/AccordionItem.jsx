@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 
-function AccordionItem({ d, multiSelections }) {
+function AccordionItem({ d, multiSelections, id }) {
+  const [toggleIds, setToggleIds] = useState([]);
   const handleClick = (e) => {
-    const elementsWithShowClass = document.querySelectorAll(".show");
+    // const elementsWithShowClass = document.querySelectorAll(".show");
 
-    if (!multiSelections) {
-      // Remove the 'close' class from each found element
-      elementsWithShowClass.forEach((element) => {
-        element.classList.remove("show");
-      });
-    }
-    const childWithCloseClass = e.currentTarget.querySelector(".close");
+    // if (!multiSelections) {
 
-    childWithCloseClass.classList.add("show");
+    //   setToggleIds([id]);
+
+    // setToggleIds([id]);
+
+    // }
+    setToggleIds([id]);
+    // const childWithCloseClass = e.currentTarget.querySelector(".close");
+
+    // childWithCloseClass.classList.add("show");
   };
-
+  console.log(
+    "toggleids",
+    toggleIds,
+    toggleIds.includes("1"),
+    toggleIds.includes("2"),
+    toggleIds.includes("3"),
+    toggleIds.includes("4")
+  );
   return (
-    <div className="box show_answer" onClick={handleClick}>
+    <div className={`box  `} onClick={handleClick}>
       <div className=" question">
         {d.question}
         <FaPlus size={10} />
       </div>
-      <div className=" answer close">{d.answer}</div>
+      <div className={`answer close ${toggleIds.includes(id) ? "show" : ""}`}>
+        {d.answer}
+      </div>
     </div>
   );
 }
