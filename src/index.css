@@ -7,6 +7,7 @@
 }
 .box {
   color: white;
+  padding: 30px 20px;
   font-weight: bold;
   background-color: rgb(100, 57, 1);
   width: 30%;
@@ -20,11 +21,27 @@
   box-shadow: 0px 4px 0px rgba(0, 0, 0); /* Black shadow */
 }
 .question {
-  padding: 30px 20px;
   display: flex;
   justify-content: space-between;
-}
-.show_answer {
-  flex-shrink: 0; /* Prevent the icon from shrinking */
   cursor: pointer;
+}
+
+.answer {
+  color: rgb(245, 245, 201);
+  font-weight: normal;
+  margin-top: 15px;
+}
+
+.answer svg {
+  flex-shrink: 0; /* Prevent the icon from shrinking */
+}
+.close {
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.3s ease-out;
+}
+
+.show {
+  max-height: 50px;
 }
