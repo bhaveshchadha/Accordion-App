@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 function Accordions() {
+  const [multiSelections, setMultiSelections] = useState(false);
+  const handleMultiSections = () => {
+    const title = document.querySelector(".title");
+
+    if (multiSelections) {
+      setMultiSelections(false);
+      title.textContent = "Enable Multi Selections";
+    } else {
+      setMultiSelections(true);
+      title.textContent = "Disable Multi Selections";
+    }
+    console.log("enabled");
+  };
   const handleClick = (e) => {
-    console.log("first");
-    console.log(e.currentTarget);
     const elementsWithShowClass = document.querySelectorAll(".show");
 
     // Remove the 'close' class from each found element
-    elementsWithShowClass.forEach((element) => {
-      element.classList.remove("show");
-    });
-
+    if (!multiSelections) {
+      elementsWithShowClass.forEach((element) => {
+        element.classList.remove("show");
+      });
+    }
     const childWithCloseClass = e.currentTarget.querySelector(".close");
-    console.log(childWithCloseClass);
+
     childWithCloseClass.classList.add("show");
   };
 
   return (
     <div className="container">
-      <div className="box   title">Enable Multi Sections</div>
+      <div className="box title" onClick={handleMultiSections}>
+        Enable Multi Sections
+      </div>
       <div className="box show_answer" onClick={handleClick}>
         <div className=" question">
           Lorem ipsum dolor sit amet.
