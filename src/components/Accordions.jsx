@@ -3,36 +3,38 @@ import data from "../data/data";
 import AccordionItem from "./AccordionItem";
 
 function Accordions() {
+  const [enableMultiSelection, setEnableMultiSelection] = useState(false);
+  const handleClick = () => {
+    if (enableMultiSelection) {
+      setEnableMultiSelection(false);
+    } else {
+      setEnableMultiSelection(true);
+    }
+  };
   return (
+    // data.map((d)=>{
+    //   <AccordionItem/>
+    // })
     <div className="container">
-      <div className="box title">Enable Multi Selection</div>
-      <div className="box collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" defaultChecked />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
-        </div>
-        <div className="collapse-content">
-          <p>hello</p>
-        </div>
+      <div className="box title" onClick={handleClick}>
+        {enableMultiSelection
+          ? "Enable Multi Selection"
+          : " Disable Multi Selection"}
       </div>
-      <div className="box collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
-        </div>
-        <div className="collapse-content">
-          <p>hello</p>
-        </div>
-      </div>
-      <div className="box collapse collapse-plus bg-base-200">
-        <input type="radio" name="my-accordion-3" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
-        </div>
-        <div className="collapse-content">
-          <p>hello</p>
-        </div>
-      </div>
+
+      {data.map((d) => {
+        {
+          console.log("first");
+        }
+        return (
+          <AccordionItem
+            d={d}
+            key={d.id}
+            enableMultiSelection={enableMultiSelection}
+          />
+        );
+        // <AccordionItem />;
+      })}
     </div>
     // <div className="container">
     //   <div className="box title"

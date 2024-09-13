@@ -1,7 +1,13 @@
 import React from "react";
 
-function AccordionItem() {
-  return <div>AccordionItem</div>;
+function AccordionItem({ d, enableMultiSelection }) {
+  return (
+    <div className="box collapse collapse-plus bg-base-200">
+      <input type="radio" name={enableMultiSelection ? "my-accordion-3" : ""} />
+      <div className="collapse-title text-xl font-medium">{d.question}</div>
+      <div className="collapse-content answer">{d.answer}</div>
+    </div>
+  );
 }
 
 export default AccordionItem;

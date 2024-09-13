@@ -35,6 +35,7 @@
   color: rgb(245, 245, 201);
   font-weight: normal;
   margin-top: 15px;
+  padding: 10px;
 }
 
 .answer svg {
