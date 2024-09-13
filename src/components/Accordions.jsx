@@ -4,8 +4,9 @@ import AccordionItem from "./AccordionItem";
 
 function Accordions() {
   return (
-    <>
-      <div className="collapse collapse-plus bg-base-200">
+    <div className="container">
+      <div className="box title">Enable Multi Selection</div>
+      <div className="box collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" defaultChecked />
         <div className="collapse-title text-xl font-medium">
           Click to open this one and close others
@@ -14,7 +15,7 @@ function Accordions() {
           <p>hello</p>
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200">
+      <div className="box collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
           Click to open this one and close others
@@ -23,7 +24,7 @@ function Accordions() {
           <p>hello</p>
         </div>
       </div>
-      <div className="collapse collapse-plus bg-base-200">
+      <div className="box collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
         <div className="collapse-title text-xl font-medium">
           Click to open this one and close others
@@ -32,7 +33,7 @@ function Accordions() {
           <p>hello</p>
         </div>
       </div>
-    </>
+    </div>
     // <div className="container">
     //   <div className="box title"
     //   </div>
