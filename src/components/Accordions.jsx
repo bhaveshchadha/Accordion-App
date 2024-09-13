@@ -18,8 +18,8 @@ function Accordions() {
     <div className="container">
       <div className="box title" onClick={handleClick}>
         {enableMultiSelection
-          ? "Enable Multi Selection"
-          : " Disable Multi Selection"}
+          ? "Disable Multi Selection"
+          : " Enable Multi Selection"}
       </div>
 
       {data.map((d) => {

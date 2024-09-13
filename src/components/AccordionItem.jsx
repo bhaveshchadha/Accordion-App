@@ -3,7 +3,10 @@ import React from "react";
 function AccordionItem({ d, enableMultiSelection }) {
   return (
     <div className="box collapse collapse-plus bg-base-200">
-      <input type="radio" name={enableMultiSelection ? "my-accordion-3" : ""} />
+      <input
+        type={enableMultiSelection ? "checkbox" : "radio"}
+        name="my-accordion"
+      />
       <div className="collapse-title text-xl font-medium">{d.question}</div>
       <div className="collapse-content answer">{d.answer}</div>
     </div>
